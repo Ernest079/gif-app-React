@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export const AddCategory = ({addCategory}) => {
-  const [inputValue, setInputValue] = useState('Naruto');
+export const AddCategory = ({onNewCategory}) => {
+  const [inputValue, setInputValue] = useState('');
   const onInputChange = ({target}) =>{
     setInputValue(target.value);
   }
@@ -10,7 +10,8 @@ export const AddCategory = ({addCategory}) => {
     if(inputValue.trim().length <=1){
       return;
     }
-    addCategory(cat => [inputValue,...cat] );
+    // addCategory(cat => [inputValue,...cat] );
+    onNewCategory(inputValue.trim());
     setInputValue('');
   }
   return (
