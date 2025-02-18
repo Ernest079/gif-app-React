@@ -15,7 +15,7 @@ export const AddCategory = ({onNewCategory}) => {
     setInputValue('');
   }
   return (
-    <form onSubmit={onSubmit}>
+    <form aria-label='gif-form' onSubmit={onSubmit}>
       
       <input
         type="text"
